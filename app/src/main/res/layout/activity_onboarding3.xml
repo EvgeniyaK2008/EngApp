@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    android:padding="40dp">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3/3"
+        android:textColor="#666666"
+        android:textSize="14sp"
+        android:layout_gravity="end" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center">
+
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="#F0F0F0"
+            android:layout_marginBottom="40dp" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="The lessons you need to learn"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Using a variety of learning styles to learn and retain"
+            android:textColor="#666666"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:lineSpacingExtra="4sp" />
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/nextButton1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Choose a Language"
+        android:textSize="16sp"
+        android:background="#410FA3"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/skipButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Skip onboarding"
+        android:textColor="#666666"
+        android:textSize="14sp"
+        android:layout_gravity="end"
+        android:layout_marginTop="16dp"
+        android:clickable="true" />
+
+</LinearLayout>
