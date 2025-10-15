@@ -1,4 +1,3 @@
-// OnboardingManager.kt
 package com.example.englishapp
 
 import android.content.Context
