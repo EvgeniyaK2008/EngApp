@@ -53,7 +53,6 @@ class LoginActivity : ComponentActivity() {
                         finish()
                     },
                     onLogin = { enteredEmail, enteredPassword ->
-                        // Упрощенная логика - всегда разрешаем вход
                         navigateToHome()
                     },
                     onForgotPassword = {
@@ -76,7 +75,7 @@ class LoginActivity : ComponentActivity() {
     }
 
     private fun showError(message: String) {
-        // Можно добавить Toast или Snackbar для показа ошибки
+    
         println("Ошибка входа: $message")
     }
 }
@@ -94,7 +93,7 @@ fun LoginScreen(
     val passwordVisible = remember { mutableStateOf(false) }
 
     Box(modifier = Modifier.fillMaxSize().background(MaterialTheme.colorScheme.background)) {
-        // Верхний синий блок
+
         Box(
             modifier = Modifier
                 .fillMaxWidth()
@@ -129,7 +128,7 @@ fun LoginScreen(
                 .fillMaxWidth()
                 .offset(y = 102.dp)
         ) {
-            // Иллюстрация и текст
+            
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -151,14 +150,14 @@ fun LoginScreen(
                 Text(
                     text = "For free, join now and start learning",
                     fontSize = 16.sp,
-                    color = MaterialTheme.colorScheme.onBackground, // Адаптивный цвет
+                    color = MaterialTheme.colorScheme.onBackground, 
                     textAlign = TextAlign.Center,
                     lineHeight = 20.sp,
                     modifier = Modifier.width(263.dp)
                 )
             }
 
-            // Поле Email
+            
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -168,13 +167,13 @@ fun LoginScreen(
                 Text(
                     text = "Email Address",
                     fontSize = 14.sp,
-                    color = MaterialTheme.colorScheme.onBackground, // Адаптивный цвет
+                    color = MaterialTheme.colorScheme.onBackground,
                     modifier = Modifier.fillMaxWidth()
                 )
 
                 Spacer(modifier = Modifier.height(8.dp))
 
-                // Поле ввода Email
+                
                 BasicTextField(
                     value = email.value,
                     onValueChange = { email.value = it },
@@ -182,7 +181,7 @@ fun LoginScreen(
                         .fillMaxWidth()
                         .height(56.dp)
                         .background(
-                            color = MaterialTheme.colorScheme.surface.copy(alpha = 0.1f), // Адаптивный цвет
+                            color = MaterialTheme.colorScheme.surface.copy(alpha = 0.1f), 
                             shape = RoundedCornerShape(16.dp)
                         )
                         .padding(horizontal = 20.dp, vertical = 16.dp),
@@ -190,7 +189,7 @@ fun LoginScreen(
                         if (email.value.isEmpty()) {
                             Text(
                                 text = "Email",
-                                color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.5f), // Адаптивный цвет
+                                color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.5f),
                                 fontSize = 16.sp
                             )
                         }
@@ -199,7 +198,7 @@ fun LoginScreen(
                 )
             }
 
-            // Поле Password
+            
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -209,13 +208,13 @@ fun LoginScreen(
                 Text(
                     text = "Password",
                     fontSize = 14.sp,
-                    color = MaterialTheme.colorScheme.onBackground, // Адаптивный цвет
+                    color = MaterialTheme.colorScheme.onBackground,
                     modifier = Modifier.fillMaxWidth()
                 )
 
                 Spacer(modifier = Modifier.height(8.dp))
 
-                // Поле ввода Password
+            
                 BasicTextField(
                     value = password.value,
                     onValueChange = { password.value = it },
@@ -224,7 +223,7 @@ fun LoginScreen(
                         .fillMaxWidth()
                         .height(56.dp)
                         .background(
-                            color = MaterialTheme.colorScheme.surface.copy(alpha = 0.1f), // Адаптивный цвет
+                            color = MaterialTheme.colorScheme.surface.copy(alpha = 0.1f),
                             shape = RoundedCornerShape(16.dp)
                         )
                         .padding(horizontal = 20.dp, vertical = 16.dp),
@@ -233,16 +232,16 @@ fun LoginScreen(
                             if (password.value.isEmpty()) {
                                 Text(
                                     text = "••••••••",
-                                    color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.5f), // Адаптивный цвет
+                                    color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.5f),
                                     fontSize = 16.sp
                                 )
                             }
                             innerTextField()
 
-                            // Текст для показа/скрытия пароля
+                            
                             Text(
                                 text = if (passwordVisible.value) "HIDE" else "SHOW",
-                                color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f), // Адаптивный цвет
+                                color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f),
                                 fontSize = 12.sp,
                                 modifier = Modifier
                                     .align(Alignment.CenterEnd)
@@ -253,7 +252,7 @@ fun LoginScreen(
                 )
             }
 
-            // Кнопка Forgot Password
+            
             TextButton(
                 onClick = onForgotPassword,
                 modifier = Modifier
@@ -263,7 +262,7 @@ fun LoginScreen(
             ) {
                 Text(
                     text = "Forgot Password",
-                    color = Color(0xFFD6185D), // Оставляем красный для акцента
+                    color = Color(0xFFD6185D),
                     fontSize = 14.sp,
                     fontWeight = FontWeight.Bold,
                     modifier = Modifier.fillMaxWidth(),
@@ -271,7 +270,7 @@ fun LoginScreen(
                 )
             }
 
-            // Кнопка Login
+            
             Button(
                 onClick = { onLogin(email.value, password.value) },
                 modifier = Modifier
@@ -281,7 +280,7 @@ fun LoginScreen(
                     .height(56.dp),
                 shape = RoundedCornerShape(12.dp),
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = Color(0xFF410FA3) // Оставляем фиолетовый
+                    containerColor = Color(0xFF410FA3)
                 )
             ) {
                 Text(
@@ -292,7 +291,7 @@ fun LoginScreen(
                 )
             }
 
-            // Кнопка Signup
+            
             TextButton(
                 onClick = onSignup,
                 modifier = Modifier
@@ -305,13 +304,13 @@ fun LoginScreen(
                 ) {
                     Text(
                         text = "Not you member? ",
-                        color = MaterialTheme.colorScheme.onBackground, // Адаптивный цвет
+                        color = MaterialTheme.colorScheme.onBackground, 
                         fontSize = 14.sp,
                         fontWeight = FontWeight.Normal
                     )
                     Text(
                         text = "Signup",
-                        color = Color(0xFF5B7BFE), // Оставляем синий для акцента
+                        color = Color(0xFF5B7BFE),
                         fontSize = 14.sp,
                         fontWeight = FontWeight.Normal
                     )
